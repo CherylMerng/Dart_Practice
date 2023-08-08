@@ -13,23 +13,25 @@ class Quiz {
 
   int startQuiz() {
 
-    int score = 0;
+    int score = 0;  // Initialize the score to 0
+    
+    for (var i = 0; i < questions.length; i++) {  // Loop through each question in the quiz
+      print("Question ${i + 1}: ${questions[i]['question']}");  // Print the question
 
-    for (var i = 0; i < questions.length; i++) {
-      print("Question ${i + 1}: ${questions[i]['question']}");
-
-      for (var j = 0; j < questions[i]['options'].length; j++) {
-        print("${j + 1}. ${questions[i]['options'][j]}");
+      for (var j = 0; j < questions[i]['options'].length; j++) { // Loop through each option for the question
+        print("${j + 1}. ${questions[i]['options'][j]}"); // Print each option for the question
       }
 
-      int userChoice = int.parse(stdin.readLineSync()!);
+      int userChoice = int.parse(stdin.readLineSync()!);  // Read the user's choice (answer)
       //int userChoice = int.parse(stdin.readLineSync() ?? '');
+
+      // Check if the user's choice matches the correct answer index for this question
       if (userChoice == questions[i]['correctIndex']+1) {
-        score++;
+        score++;  // Increment the score if the user's choice is correct
       }
     }
 
-    return score;
+    return score; // Return the final score after all questions are answered
     
   }
 }
