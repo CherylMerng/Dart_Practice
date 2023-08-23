@@ -2,8 +2,6 @@
 // Create a constructor of it and create 3 objects of it. 
 // Add them to the list and print all details.
 
-import 'House.dart';
-
 void main() {
   House h1 = House(1, "Modern Villa", 500000);
   House h2 = House(2, "Cozy Cottage", 200000);
@@ -14,4 +12,12 @@ void main() {
   for (var h in houses) {
     print("ID: ${h.id}, Name: ${h.name}, Prize: \$${h.prize}");
   }
+}
+
+class House {
+  int id;
+  String name;
+  double prize;
+
+  House(this.id, this.name, this.prize);
 }

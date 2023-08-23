@@ -2,8 +2,6 @@
 // Create a getter and setter to get and set values. 
 // Also, create 3 objects of it and print all details.
 
-import 'Camera.dart';
-
 void main() {
   Camera c1 = Camera(1, "Canon", "Black", 800);
   Camera c2 = Camera(2, "Sony", "Silver", 1000);
@@ -14,4 +12,26 @@ void main() {
   for (var c in cameraList) {
     print("ID: ${c.id}, Brand: ${c.brand}, Color: ${c.color}, Prize: \$${c.price}");
   }
+}
+
+class Camera {
+  int id;
+  String brand;
+  String color;
+  double price;
+
+  Camera(this.id, this.brand, this.color, this.price);
+
+  int get getId => this.id;
+  set setId(int id) => this.id = id;
+
+  String get getBrand => this.brand;
+  set setBrand(String brand) => this.brand = brand;
+
+  String get getColor => this.color;
+  set setColor(String color) => this.color = color;
+
+  double get getPrice => this.price;
+  set setPrice(double price) => this.price = price;
+
 }
